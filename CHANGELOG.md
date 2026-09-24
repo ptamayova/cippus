@@ -1,6 +1,6 @@
 # Release Notes
 
-## [Unreleased](https://github.com/mdecode/ai-dev-quickstart/compare/1.4.0...HEAD)
+## [Unreleased](https://github.com/mdecode/ai-dev-quickstart/compare/1.4.1...HEAD)
 
 ## [1.4.0](https://github.com/mdecode/ai-dev-quickstart/compare/1.3.1...1.4.0) - 2026-09-06
 

@@ -28,7 +28,6 @@ The installer writes the following files into your application's root or `.agent
 - [`laravel-testing`](resources/stubs/skills/laravel-testing/SKILL.md) — selects efficient Pest coverage for Laravel behavior.
 - [`requirements-to-gh-issue`](resources/stubs/skills/requirements-to-gh-issue/SKILL.md) — turns a requirement into a repository-grounded GitHub issue.
 - [`pr-description`](resources/stubs/skills/pr-description/SKILL.md) — drafts evidence-based pull-request descriptions.
-- [`pr-review`](resources/stubs/skills/pr-review/SKILL.md) — reviews pull-request diffs for behavior, security, and architecture risks.
 
 These links show the shipped templates; after installation, use the matching files in your application as the source of truth.
 
@@ -43,7 +42,7 @@ php artisan ai-dev-quickstart:install
 
 The installer adds:
 
-- `AGENTS.md`, `CLAUDE.md`, and starter Laravel skills in `.agents/skills/`, including requirement-to-issue, PR-description, and PR-review workflows;
+- `AGENTS.md`, `CLAUDE.md`, and starter Laravel skills in `.agents/skills/`, including requirement-to-issue and PR-description workflows;
 - `docker-compose.yml` and a FrankenPHP Dockerfile with PostgreSQL;
 - `pint.json`, `phpstan.neon`, and `rector.php`;
 - quality scripts in `composer.json`; and
