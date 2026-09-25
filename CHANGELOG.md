@@ -1,6 +1,20 @@
 # Release Notes
 
-## [Unreleased](https://github.com/ptamayova/cippus/compare/2.0.0...HEAD)
+## [Unreleased](https://github.com/ptamayova/cippus/compare/Cippus 2.0.0...HEAD)
+
+## [Cippus 2.0.0](https://github.com/ptamayova/cippus/compare/2.0.0...Cippus 2.0.0) - 2026-09-25
+
+### Cippus 2.0.0
+
+Cippus is the new name for Ai Dev Quickstart.
+
+#### Breaking changes
+
+- Install with .
+- Use .
+- Replace  imports with .
+
+See CHANGELOG.md for the upgrade guide.
 
 ## [2.0.0](https://github.com/ptamayova/cippus/compare/1.5.0...2.0.0) - 2026-09-25
 
