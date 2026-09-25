@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AiDevQuickstart\AiDevQuickstart\Console;
+namespace Mdecode\Cippus\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -13,11 +13,11 @@ use function Laravel\Prompts\select;
 
 class InstallCommand extends Command
 {
-    protected $signature = 'ai-dev-quickstart:install
+    protected $signature = 'cippus:install
         {--force : Overwrite existing customizable resource files}
         {--no-composer : Install resources and scripts without running Composer}';
 
-    protected $description = 'Install the customizable AI development quickstart into the application';
+    protected $description = 'Set up the editable Cippus AI development baseline in the application';
 
     /** @var list<string> */
     private const array DEV_DEPENDENCIES = [
@@ -90,7 +90,7 @@ class InstallCommand extends Command
             return self::FAILURE;
         }
 
-        $this->components->info('AI development quickstart installed. All generated files can now be customized.');
+        $this->components->info('Cippus is set. Your agents now have an editable baseline, a toolbelt, and a quality gate.');
 
         return self::SUCCESS;
     }
@@ -122,7 +122,7 @@ class InstallCommand extends Command
     {
         $target = base_path($destination);
         $action = select(
-            label: "{$destination} already exists. How should the AI development quickstart content be installed?",
+            label: "{$destination} already exists. How should the Cippus baseline be installed?",
             options: [
                 'attach' => 'Attach the quickstart content',
                 'replace' => 'Replace the existing file',

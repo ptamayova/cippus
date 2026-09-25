@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AiDevQuickstart\AiDevQuickstart\Tests;
+namespace Mdecode\Cippus\Tests;
 
-use AiDevQuickstart\AiDevQuickstart\AiDevQuickstartServiceProvider;
+use Mdecode\Cippus\CippusServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
@@ -14,7 +14,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            AiDevQuickstartServiceProvider::class,
+            CippusServiceProvider::class,
         ];
     }
 }

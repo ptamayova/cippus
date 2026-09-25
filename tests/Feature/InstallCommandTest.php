@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Illuminate\Filesystem\Filesystem;
 
 beforeEach(function () {
-    $this->applicationPath = sys_get_temp_dir().'/ai-dev-quickstart-'.bin2hex(random_bytes(8));
+    $this->applicationPath = sys_get_temp_dir().'/cippus-'.bin2hex(random_bytes(8));
 
     mkdir($this->applicationPath, 0755, true);
 
@@ -27,8 +27,8 @@ afterEach(function () {
 });
 
 it('installs editable development resources and configures composer', function () {
-    $this->artisan('ai-dev-quickstart:install', ['--no-composer' => true])
-        ->expectsOutputToContain('AI development quickstart installed')
+    $this->artisan('cippus:install', ['--no-composer' => true])
+        ->expectsOutputToContain('Cippus is set')
         ->assertSuccessful();
 
     expect($this->applicationPath.'/AGENTS.md')->toBeFile()
@@ -93,7 +93,7 @@ PHP;
     putenv("PATH={$binDirectory}".PATH_SEPARATOR.$originalPath);
 
     try {
-        $this->artisan('ai-dev-quickstart:install')->assertSuccessful();
+        $this->artisan('cippus:install')->assertSuccessful();
     } finally {
         putenv("PATH={$originalPath}");
     }
@@ -132,9 +132,9 @@ it('attaches or replaces customized instruction files without changing composer 
         json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR).PHP_EOL,
     );
 
-    $this->artisan('ai-dev-quickstart:install', ['--no-composer' => true])
+    $this->artisan('cippus:install', ['--no-composer' => true])
         ->expectsChoice(
-            'AGENTS.md already exists. How should the AI development quickstart content be installed?',
+            'AGENTS.md already exists. How should the Cippus baseline be installed?',
             'attach',
             [
                 'attach' => 'Attach the quickstart content',
@@ -142,7 +142,7 @@ it('attaches or replaces customized instruction files without changing composer 
             ],
         )
         ->expectsChoice(
-            'CLAUDE.md already exists. How should the AI development quickstart content be installed?',
+            'CLAUDE.md already exists. How should the Cippus baseline be installed?',
             'attach',
             [
                 'attach' => 'Attach the quickstart content',
@@ -164,7 +164,7 @@ it('attaches or replaces customized instruction files without changing composer 
         ->and($composer['require-dev']['rector/rector'])->toBe('^2.5')
         ->and($composer['scripts']['lint'])->toBe('custom lint');
 
-    $this->artisan('ai-dev-quickstart:install', [
+    $this->artisan('cippus:install', [
         '--force' => true,
         '--no-composer' => true,
     ])->assertSuccessful();
@@ -179,9 +179,9 @@ it('replaces existing instruction files when selected', function () {
     file_put_contents($this->applicationPath.'/AGENTS.md', 'custom rules');
     file_put_contents($this->applicationPath.'/CLAUDE.md', 'custom Claude rules');
 
-    $this->artisan('ai-dev-quickstart:install', ['--no-composer' => true])
+    $this->artisan('cippus:install', ['--no-composer' => true])
         ->expectsChoice(
-            'AGENTS.md already exists. How should the AI development quickstart content be installed?',
+            'AGENTS.md already exists. How should the Cippus baseline be installed?',
             'replace',
             [
                 'attach' => 'Attach the quickstart content',
@@ -189,7 +189,7 @@ it('replaces existing instruction files when selected', function () {
             ],
         )
         ->expectsChoice(
-            'CLAUDE.md already exists. How should the AI development quickstart content be installed?',
+            'CLAUDE.md already exists. How should the Cippus baseline be installed?',
             'replace',
             [
                 'attach' => 'Attach the quickstart content',
@@ -207,7 +207,7 @@ it('replaces existing instruction files when selected', function () {
 it('fails loudly when the application composer manifest is invalid', function () {
     file_put_contents($this->applicationPath.'/composer.json', '{invalid');
 
-    $this->artisan('ai-dev-quickstart:install', ['--no-composer' => true])
+    $this->artisan('cippus:install', ['--no-composer' => true])
         ->expectsOutputToContain('Unable to update composer.json')
         ->assertFailed();
 });

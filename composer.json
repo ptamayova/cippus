@@ -1,13 +1,15 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "mdecode/ai-dev-quickstart",
-    "description": "Configure new Laravel applications with customizable AI development skills, rules, tooling, and Docker services",
+    "name": "mdecode/cippus",
+    "description": "Give Laravel AI agents an editable development baseline with clear architecture, skills, tooling, and local services",
     "keywords": [
         "laravel",
         "mdecode",
-        "ai-dev-quickstart"
+        "cippus",
+        "ai-agents",
+        "development-tools"
     ],
-    "homepage": "https://github.com/mdecode/ai-dev-quickstart",
+    "homepage": "https://github.com/ptamayova/cippus",
     "license": "MIT",
     "authors": [
         {
@@ -35,12 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "AiDevQuickstart\\AiDevQuickstart\\": "src/"
+            "Mdecode\\Cippus\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AiDevQuickstart\\AiDevQuickstart\\Tests\\": "tests/",
+            "Mdecode\\Cippus\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/",
             "Workbench\\Database\\Factories\\": "workbench/database/factories/",
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
@@ -90,7 +92,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AiDevQuickstart\\AiDevQuickstart\\AiDevQuickstartServiceProvider"
+                "Mdecode\\Cippus\\CippusServiceProvider"
             ]
         }
     },

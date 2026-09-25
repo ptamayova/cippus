@@ -1,80 +1,70 @@
 <div align="center">
-    <h1>Ai Dev Quickstart</h1>
+    <h1>Cippus</h1>
+    <p><em>Mark the line. Build with confidence.</em></p>
 </div>
 
 <p align="center">
-    <a href="https://github.com/ptamayova/ai-dev-quickstart/releases"><img src="https://img.shields.io/github/v/release/ptamayova/ai-dev-quickstart?style=flat-square" alt="Latest release"></a>
-    <a href="https://github.com/ptamayova/ai-dev-quickstart/blob/main/composer.json"><img src="https://img.shields.io/badge/PHP-8.3%2B-777BB4?style=flat-square&logo=php&logoColor=white" alt="Requires PHP 8.3 or later"></a>
-    <a href="https://github.com/ptamayova/ai-dev-quickstart/blob/main/composer.json"><img src="https://img.shields.io/badge/Laravel-12%20%7C%2013-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Supports Laravel 12 and 13"></a>
-    <a href="https://github.com/ptamayova/ai-dev-quickstart/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/ptamayova/ai-dev-quickstart/tests.yml?branch=main&label=Tests&style=flat-square" alt="Tests"></a>
-    <a href="https://github.com/ptamayova/ai-dev-quickstart/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/ptamayova/ai-dev-quickstart?style=flat-square" alt="MIT License"></a>
+    <a href="https://github.com/ptamayova/cippus/releases"><img src="https://img.shields.io/github/v/release/ptamayova/cippus?style=flat-square" alt="Latest release"></a>
+    <a href="https://github.com/ptamayova/cippus/blob/main/composer.json"><img src="https://img.shields.io/badge/PHP-8.3%2B-777BB4?style=flat-square&logo=php&logoColor=white" alt="Requires PHP 8.3 or later"></a>
+    <a href="https://github.com/ptamayova/cippus/blob/main/composer.json"><img src="https://img.shields.io/badge/Laravel-12%20%7C%2013-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Supports Laravel 12 and 13"></a>
+    <a href="https://github.com/ptamayova/cippus/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/ptamayova/cippus/tests.yml?branch=main&label=Tests&style=flat-square" alt="Tests"></a>
+    <a href="https://github.com/ptamayova/cippus/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/ptamayova/cippus?style=flat-square" alt="MIT License"></a>
 </p>
 
-Ai Dev Quickstart gives a Laravel application an editable development baseline. Its installer adds AI instructions and Laravel skills for implementation, testing, requirements, pull-request descriptions, and architecture-aware reviews; a FrankenPHP and PostgreSQL Docker setup; Pint, PHPStan/Larastan, and Rector configuration; plus Composer scripts for the quality suite. Everything it installs belongs to your application and can be customized.
+Cippus gives a Laravel application an editable baseline for AI-assisted development. It lays down clear instructions, practical skills, local services, and a quality toolbelt so agents can write application code with precision—without locking the application into opaque package conventions. Everything it installs belongs to your application and is meant to be adapted.
 
-## Proposed architecture
+## What Cippus marks
 
-The quickstart provides a pragmatic Laravel architecture rather than a rigid framework. It applies SOLID and clean-code principles through focused boundaries: Form Requests validate HTTP input, thin controllers translate requests into responses, and single-purpose Actions hold each business use case. Actions use Eloquent directly, keep reusable query constraints in model scopes, and wrap related writes in transactions. This keeps application behavior reusable from HTTP controllers, commands, and jobs without adding repository or service layers by default.
-
-The generated [AGENTS.md](resources/stubs/AGENTS.md) explains these conventions and the accompanying testing strategy in detail. Treat it as an editable starting point: adapt it to your application as its domains and constraints become clear.
-
-## Read after installation
-
-The installer writes the following files into your application's root or `.agents/skills/` directory. Read them before asking an AI agent to make changes, then customize them to fit the application.
-
-- [`AGENTS.md`](resources/stubs/AGENTS.md) — architecture, clean-code rules, and testing strategy.
-- [`CLAUDE.md`](resources/stubs/CLAUDE.md) — equivalent project instructions for Claude.
-- [`laravel-actions`](resources/stubs/skills/laravel-actions/SKILL.md) — implements use cases with thin HTTP boundaries and focused Actions.
-- [`laravel-testing`](resources/stubs/skills/laravel-testing/SKILL.md) — selects efficient Pest coverage for Laravel behavior.
-- [`requirements-to-gh-issue`](resources/stubs/skills/requirements-to-gh-issue/SKILL.md) — turns a requirement into a repository-grounded GitHub issue.
-- [`pr-description`](resources/stubs/skills/pr-description/SKILL.md) — drafts evidence-based pull-request descriptions.
-
-These links show the shipped templates; after installation, use the matching files in your application as the source of truth.
-
-## Installation
-
-Install the package as a development dependency, then run the installer from your Laravel application's root:
-
-```bash
-composer require --dev mdecode/ai-dev-quickstart
-php artisan ai-dev-quickstart:install
-```
+Cippus starts with a pragmatic architecture: Form Requests validate HTTP input, thin controllers translate requests into responses, and focused Actions hold each business use case. Actions use Eloquent directly, keep reusable constraints in model scopes, and wrap related writes in transactions. This keeps behavior reusable from controllers, commands, and jobs without adding repository or service layers by default.
 
 The installer adds:
 
-- `AGENTS.md`, `CLAUDE.md`, and starter Laravel skills in `.agents/skills/`, including requirement-to-issue and PR-description workflows;
-- `docker-compose.yml` and a FrankenPHP Dockerfile with PostgreSQL;
-- `pint.json`, `phpstan.neon`, and `rector.php`;
-- quality scripts in `composer.json`; and
-- compatible development dependencies for Pest, PHPStan/Larastan, and Rector.
+- `AGENTS.md`, `CLAUDE.md`, and starter skills for implementation, testing, requirements, and pull-request descriptions;
+- a FrankenPHP and PostgreSQL Docker setup;
+- Pint, PHPStan/Larastan, and Rector configuration; and
+- Composer scripts and compatible development dependencies for the quality suite.
 
-When `AGENTS.md` or `CLAUDE.md` already exists, the installer asks whether to append the baseline or replace it; appending is the default. Other existing files, Composer constraints, and scripts are preserved. Use `--force` only when you intentionally want to replace generated files:
+Read the generated [`AGENTS.md`](resources/stubs/AGENTS.md) before handing work to an AI agent. It is a strong starting line, not a rigid rulebook.
 
-```bash
-php artisan ai-dev-quickstart:install --force
-```
+## Installation
 
-For an offline or staged setup, `--no-composer` writes resources and Composer scripts without installing dependencies. Run the installer again without this option when Composer is available:
+Install Cippus as a development dependency, then run the installer from the application root:
 
 ```bash
-php artisan ai-dev-quickstart:install --no-composer
+composer require --dev mdecode/cippus
+php artisan cippus:install
 ```
 
-## Usage
+When `AGENTS.md` or `CLAUDE.md` already exists, Cippus asks whether to attach its baseline or replace the file; attaching is the default. Other existing files, Composer constraints, and scripts are preserved.
 
-Customize the installed instructions, skills, Docker files, and quality configuration for your application. Re-running the installer preserves them unless `--force` is supplied.
-
-### Docker
-
-Start the included FrankenPHP application and PostgreSQL services:
+Use `--force` only when you intentionally want to replace generated resources:
 
 ```bash
-docker compose up --build
+php artisan cippus:install --force
 ```
 
-The application is available at `http://localhost:8000` by default. Set `APP_PORT` or `DB_*` values to customize the Compose services.
+For an offline or staged setup, `--no-composer` writes resources and Composer scripts without installing dependencies:
 
-### Quality commands
+```bash
+php artisan cippus:install --no-composer
+```
+
+Run the installer again without this option when Composer is available.
+
+## Make it yours
+
+The installed files are application-owned. Customize the instructions, skills, Docker files, and quality configuration for the application you are building. Re-running Cippus preserves them unless `--force` is supplied.
+
+The shipped templates are available here for review:
+
+- [`AGENTS.md`](resources/stubs/AGENTS.md) — architecture, clean-code rules, and testing strategy.
+- [`CLAUDE.md`](resources/stubs/CLAUDE.md) — equivalent project instructions for Claude.
+- [`laravel-actions`](resources/stubs/skills/laravel-actions/SKILL.md) — focused use-case implementation.
+- [`laravel-testing`](resources/stubs/skills/laravel-testing/SKILL.md) — efficient Pest coverage.
+- [`requirements-to-gh-issue`](resources/stubs/skills/requirements-to-gh-issue/SKILL.md) — repository-grounded issue planning.
+- [`pr-description`](resources/stubs/skills/pr-description/SKILL.md) — evidence-based pull-request descriptions.
+
+## Running the quality gate
 
 ```bash
 # Apply Rector and Pint fixes
@@ -96,19 +86,25 @@ composer test:types
 composer test
 ```
 
-The exact-coverage test command requires Xdebug, which is included in the generated FrankenPHP image.
+The included Docker setup runs FrankenPHP and PostgreSQL:
+
+```bash
+docker compose up --build
+```
+
+The exact-coverage command requires Xdebug, which is included in the generated FrankenPHP image.
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for recent changes.
 
 ## Contributing
 
-Thank you for considering contributing to Ai Dev Quickstart! Please review our [contributing guide](.github/CONTRIBUTING.md) to get started.
+Thank you for considering contributing to Cippus. Please review the [contributing guide](.github/CONTRIBUTING.md) to get started.
 
-## Security Vulnerabilities
+## Security vulnerabilities
 
-Please review [our security policy](.github/SECURITY.md) on how to report security vulnerabilities.
+Please review the [security policy](.github/SECURITY.md) to report security vulnerabilities.
 
 ## Credits
 
@@ -117,4 +113,4 @@ Please review [our security policy](.github/SECURITY.md) on how to report securi
 
 ## License
 
-Ai Dev Quickstart is open-sourced software licensed under the [MIT license](LICENSE.md).
+Cippus is open-sourced software licensed under the [MIT license](LICENSE.md).

@@ -1,15 +1,15 @@
 ---
-name: ai-dev-quickstart-development
+name: cippus-development
 description: >
-  Configure and apply the Ai Dev Quickstart package in Laravel applications.
+  Configure and apply the Cippus package in Laravel applications.
 license: MIT
 metadata:
   author: mdecode
 ---
 
-# Ai Dev Quickstart
+# Cippus
 
-Use this skill when a Laravel application needs to integrate the Ai Dev Quickstart package.
+Use this skill when a Laravel application needs an editable Cippus baseline for precise AI-assisted development.
 
 ## Primary Goal
 
@@ -26,8 +26,8 @@ Use this skill when a Laravel application needs to integrate the Ai Dev Quicksta
 ### 2. Install the baseline
 
 ```bash
-composer require --dev mdecode/ai-dev-quickstart
-php artisan ai-dev-quickstart:install
+composer require --dev mdecode/cippus
+php artisan cippus:install
 ```
 
 The command uses an interactive selector when existing `AGENTS.md` and `CLAUDE.md` files are found: append the package baseline (the default) or replace the file. It preserves other existing resource files and Composer values, adds missing scripts, then uses `composer require --dev` without versions so Composer can select and record the newest compatible development dependencies.
@@ -60,8 +60,8 @@ Read before executing:
 
 ## Examples
 
-- scaffold without network access: `php artisan ai-dev-quickstart:install --no-composer`, review the diff, then run `composer update`
-- intentionally reset only package-generated resources: commit current customizations, then run `php artisan ai-dev-quickstart:install --force`
+- scaffold without network access: `php artisan cippus:install --no-composer`, review the diff, then run `composer update`
+- intentionally reset only package-generated resources: commit current customizations, then run `php artisan cippus:install --force`
 
 ## Anti-patterns
 

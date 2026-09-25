@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-use AiDevQuickstart\AiDevQuickstart\Tests\TestCase;
+use Mdecode\Cippus\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

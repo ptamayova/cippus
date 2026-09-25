@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace AiDevQuickstart\AiDevQuickstart;
+namespace Mdecode\Cippus;
 
-use AiDevQuickstart\AiDevQuickstart\Console\InstallCommand;
 use Illuminate\Support\ServiceProvider;
+use Mdecode\Cippus\Console\InstallCommand;
 
-class AiDevQuickstartServiceProvider extends ServiceProvider
+class CippusServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
     public function register(): void
     {
-        $this->app->singleton(AiDevQuickstart::class);
+        $this->app->singleton(Cippus::class);
     }
 
     /**
