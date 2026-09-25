@@ -1,6 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/mdecode/ai-dev-quickstart/compare/1.4.1...HEAD)
+## [Unreleased](https://github.com/mdecode/ai-dev-quickstart/compare/1.5.0...HEAD)
+
+## [1.5.0](https://github.com/mdecode/ai-dev-quickstart/compare/1.4.1...1.5.0) - 2026-09-25
+
+### Removed\n\n- The installer no longer adds the `pr-review` skill to target Laravel applications.\n\nExisting applications retain an already-installed `.agents/skills/pr-review` directory until it is removed manually.
 
 ## [1.4.1](https://github.com/mdecode/ai-dev-quickstart/compare/1.4.0...1.4.1) - 2026-09-06
 
