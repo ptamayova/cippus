@@ -13,14 +13,14 @@ Use this skill when a Laravel application needs an editable Cippus baseline for 
 
 ## Primary Goal
 
-- install a customizable, application-owned baseline for AI instructions, Laravel development and collaboration skills, quality tooling, and Docker services
+- install a customizable, application-owned baseline for AI instructions, Laravel development and collaboration skills, and quality tooling
 
 ## Workflow
 
 ### 1. Inspect the Laravel application
 
 - confirm the working directory contains `artisan` and `composer.json`
-- inspect existing `AGENTS.md`, `CLAUDE.md`, `.agents/skills`, Docker, Rector, Pint, and PHPStan files before installing
+- inspect existing `AGENTS.md`, `CLAUDE.md`, `.agents/skills`, Rector, Pint, and PHPStan files before installing
 - preserve app-specific Composer constraints and scripts
 
 ### 2. Install the baseline
@@ -41,12 +41,12 @@ Use `--no-composer` only when Composer cannot run yet; re-run the installer with
 - use `laravel-actions` and `laravel-testing` for application behavior and coverage decisions
 - use `requirements-to-gh-issue` and `pr-description` for repository-grounded planning and pull-request work; adapt every installed skill if the application architecture changes
 - add or refine skills under `.agents/skills/`
-- adjust `docker-compose.yml` and `docker/laravel/Dockerfile` for local infrastructure
 - tune `phpstan.neon`, `pint.json`, and `rector.php` as the application evolves
+- use SQLite for local development; add application-owned infrastructure only when the application needs it
 
 ### 4. Validate the application
 
-Run the narrow command needed during development, then run `composer test` for the full quality gate (PHPStan, formatting, type coverage, and Pest). Use `docker compose up --build` to validate the FrankenPHP and PostgreSQL setup.
+Run the narrow command needed during development, then run `composer test` for the full quality gate (PHPStan, formatting, type coverage, and Pest). Ensure Xdebug is available in the local PHP environment before running the exact-coverage command.
 
 ## Rules, References, and Templates
 

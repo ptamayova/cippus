@@ -11,7 +11,7 @@
     <a href="https://github.com/ptamayova/cippus/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/ptamayova/cippus?style=flat-square" alt="MIT License"></a>
 </p>
 
-Cippus gives a Laravel application an editable baseline for AI-assisted development. It lays down clear instructions, practical skills, local services, and a quality toolbelt so agents can write application code with precision—without locking the application into opaque package conventions. Everything it installs belongs to your application and is meant to be adapted.
+Cippus gives a Laravel application an editable baseline for AI-assisted development. It lays down clear instructions, practical skills, and a quality toolbelt so agents can write application code with precision—without locking the application into opaque package conventions. Everything it installs belongs to your application and is meant to be adapted.
 
 ## What Cippus marks
 
@@ -20,7 +20,6 @@ Cippus starts with a pragmatic architecture: Form Requests validate HTTP input, 
 The installer adds:
 
 - `AGENTS.md`, `CLAUDE.md`, and starter skills for implementation, testing, requirements, and pull-request descriptions;
-- a FrankenPHP and PostgreSQL Docker setup;
 - Pint, PHPStan/Larastan, and Rector configuration; and
 - Composer scripts and compatible development dependencies for the quality suite.
 
@@ -53,7 +52,7 @@ Run the installer again without this option when Composer is available.
 
 ## Make it yours
 
-The installed files are application-owned. Customize the instructions, skills, Docker files, and quality configuration for the application you are building. Re-running Cippus preserves them unless `--force` is supplied.
+The installed files are application-owned. Customize the instructions, skills, and quality configuration for the application you are building. Re-running Cippus preserves them unless `--force` is supplied. Cippus stays close to native Laravel development and does not provision local infrastructure; use SQLite locally, or add containers for services your application needs.
 
 The shipped templates are available here for review:
 
@@ -86,13 +85,7 @@ composer test:types
 composer test
 ```
 
-The included Docker setup runs FrankenPHP and PostgreSQL:
-
-```bash
-docker compose up --build
-```
-
-The exact-coverage command requires Xdebug, which is included in the generated FrankenPHP image.
+The exact-coverage command requires Xdebug to be available in your local PHP environment.
 
 ## Changelog
 

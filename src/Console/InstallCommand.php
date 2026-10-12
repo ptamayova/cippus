@@ -62,8 +62,6 @@ class InstallCommand extends Command
         'skills/laravel-testing/SKILL.md' => '.agents/skills/laravel-testing/SKILL.md',
         'skills/requirements-to-gh-issue/SKILL.md' => '.agents/skills/requirements-to-gh-issue/SKILL.md',
         'skills/pr-description/SKILL.md' => '.agents/skills/pr-description/SKILL.md',
-        'docker-compose.yml' => 'docker-compose.yml',
-        'docker/laravel/Dockerfile' => 'docker/laravel/Dockerfile',
         'phpstan.neon' => 'phpstan.neon',
         'pint.json' => 'pint.json',
         'rector.php' => 'rector.php',

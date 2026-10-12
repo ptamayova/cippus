@@ -1,7 +1,7 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "mdecode/cippus",
-    "description": "Give Laravel AI agents an editable development baseline with clear architecture, skills, tooling, and local services",
+    "description": "Give Laravel AI agents an editable development baseline with clear architecture, skills, and quality tooling",
     "keywords": [
         "laravel",
         "mdecode",

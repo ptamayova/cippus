@@ -51,7 +51,7 @@ We embrace Laravel's Active Record implementation (Eloquent) rather than fightin
 
 ### 2. Feature / Integration Tests (`tests/Feature/`) — Pest
 *This will be the bulk of your test suite. Laravel excels at fast DB testing.*
-- **What to test (Actions):** Instantiate the Action, pass it real data, let it hit the test database (SQLite/Postgres), and assert the database state changed correctly or the right Events/Jobs were dispatched.
+- **What to test (Actions):** Instantiate the Action, pass it real data, let it hit the SQLite test database, and assert the database state changed correctly or the right Events/Jobs were dispatched.
 - **What to test (HTTP Boundaries):** Test Controller endpoints (`$this->post(...)`). Assert validation fails when expected, and assert the correct Action is triggered and returns a 200/302.
 - **Mocking rules:** Only mock 3rd-party APIs (Stripe, Postmark, LLMs) using Laravel's built-in `Http::fake()` or interface binding. Do *not* mock the database.
 

@@ -37,8 +37,8 @@ it('installs editable development resources and configures composer', function (
         ->and($this->applicationPath.'/.agents/skills/laravel-testing/SKILL.md')->toBeFile()
         ->and($this->applicationPath.'/.agents/skills/requirements-to-gh-issue/SKILL.md')->toBeFile()
         ->and($this->applicationPath.'/.agents/skills/pr-description/SKILL.md')->toBeFile()
-        ->and($this->applicationPath.'/docker-compose.yml')->toBeFile()
-        ->and($this->applicationPath.'/docker/laravel/Dockerfile')->toBeFile()
+        ->and($this->applicationPath.'/docker-compose.yml')->not->toBeFile()
+        ->and($this->applicationPath.'/docker/laravel/Dockerfile')->not->toBeFile()
         ->and($this->applicationPath.'/phpstan.neon')->toBeFile()
         ->and($this->applicationPath.'/pint.json')->toBeFile()
         ->and($this->applicationPath.'/rector.php')->toBeFile();
